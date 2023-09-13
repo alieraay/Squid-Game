@@ -41,6 +41,7 @@ module.exports = {
 	etherscan: {
 		apiKey: {
 			goerli: ETHERSCAN_API_KEY,
+			blockConfirmations: 6,
 		},
 	},
 	mocha: {
