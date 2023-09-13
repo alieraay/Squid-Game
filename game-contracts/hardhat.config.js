@@ -18,7 +18,7 @@ module.exports = {
 		compilers: [{ version: "0.8.18" }],
 	},
 
-	defaultNetwork: "goerli",
+	defaultNetwork: "hardhat",
 	networks: {
 		hardhat: {
 			accounts: [
