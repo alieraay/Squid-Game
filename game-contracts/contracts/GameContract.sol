@@ -33,6 +33,7 @@ contract SquidGame {
     GameStatus public gameStatus = GameStatus.WAITING;
 
     function enterGame(address _player) public {
+        require(msg.sender == _player, "You can only enter the game for yourself");
         require(
             gameStatus == GameStatus.WAITING,
             "Game is not waiting for players"
@@ -67,6 +68,7 @@ contract SquidGame {
     // 0 = left, 1 = right
     function move(address _playerAddress, uint _nextStep) public {
         require(gameStatus == GameStatus.PLAYING, "Game is not playing");
+        require(_playerAddress == msg.sender, "You can only move for yourself" );
         require(
             _playerAddress == player1.playerAddress ||
                 _playerAddress == player2.playerAddress,
